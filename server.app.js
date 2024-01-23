@@ -112,10 +112,14 @@ app.use(async (ctx) => {
 
       if (idx < 0) return;
 
+      console.log('name',name, tickets[idx].name)
+      console.log('description',description, tickets[idx].description)
+      console.log('status',status, tickets[idx].status)
       tickets[idx].name = name ? name : tickets[idx].name;
       tickets[idx].status = status ? status : false;
       tickets[idx].description = description ? description : tickets[idx].description;
       ctx.response.body = tickets[idx];
+      
       return;
 
     default:
